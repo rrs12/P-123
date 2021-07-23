@@ -10,26 +10,30 @@ function setup() {
 function modelLoaded() {
     console.log("PoseNet load ho gaya hain")
 }
-noseX=180
-noseY=180
-leftWristX=0
-rightWristX=0
-difference=50
+noseX = 100
+noseY = 100
+leftWristX = 0
+rightWristX = 0
+difference = 20
+word= document.getElementById("input").value
 
 function gotPoses(results) {
-    if(results.length > 0) {
-noseX=results[0].pose.nose.x
-noseY=results[0].pose.nose.y
+    if (results.length > 0) {
+        noseX = results[0].pose.nose.x
+        noseY = results[0].pose.nose.y
 
-leftWristX=results[0].pose.leftWrist.x
-rightWristX=results[0].pose.rightWrist.x
+        leftWristX = results[0].pose.leftWrist.x
+        rightWristX = results[0].pose.rightWrist.x
 
-difference= floor(leftWristX-rightWristX)
-}}
+        difference = floor(leftWristX - rightWristX)
+        word= document.getElementById("input").value
+    }
+}
 
-/*function draw(){
-    stroke(0, 102, 153)
-    fill(0, 102, 153);
+function draw() {
+    background('#6C91C2');
+    document.getElementById("font-size").innerHTML =difference + "px";
     textSize(difference);
-    text('word', noseX, noseY);
-}*/
+    fill('#FFFFFF');
+    text(word, noseX, noseY);
+}

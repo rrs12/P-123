@@ -43,3 +43,11 @@ canvas{
 video{
     margin-left:10%;
 }
+input{
+width: 70%;
+border-radius: 75px;
+background: transparent;
+color:#292e34;
+border: 2px solid white;
+font-size: 22px;
+margin: 10px;}
